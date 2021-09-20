@@ -4,7 +4,7 @@
  *
  * Date: September 20, 2021
  *
- * Desc: Demo porject for OOP3200 - F2021- Week 3
+ * Desc: Demo project for OOP3200 - F2021- Week 3
  *
  */
 
