@@ -10,10 +10,17 @@
 
 #include <iostream>
 
+#include "Vector2D.h"
+
 
 int main()
 {
-	
-	std::cout << "Hello World!\n";
+	Vector2D origin;
+
+	Vector2D first(10.0f, 20.0f);
+
+	origin = first;
+
+	std::cout << origin.ToString() << std::endl;;
 }
 

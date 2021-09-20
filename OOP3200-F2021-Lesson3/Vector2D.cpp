@@ -2,7 +2,22 @@
 
 Vector2D::Vector2D()
 {
-	Set();
+	Set(0.0f, 0.0f);
+}
+
+Vector2D::Vector2D(const float value)
+{
+	Set(value, value);
+}
+
+Vector2D::Vector2D(const float x, const float y)
+{
+	Set(x, y);
+}
+
+Vector2D::Vector2D(const Vector2D& vec2D)
+{
+	Set(vec2D.GetX(), vec2D.GetY());
 }
 
 Vector2D::~Vector2D()
@@ -37,6 +52,6 @@ void Vector2D::Set(const float x = 0.0f, const float y = 0.0f)
 std::string Vector2D::ToString() const
 {
 	std::string outputString;
-	outputString += "(" + std::to_string(GetX()) + ", " + std::to_string(GetY()) + ")\n";
+	outputString += "(" + std::to_string(GetX()) + ", " + std::to_string(GetY()) + ")";
 	return outputString;
 }

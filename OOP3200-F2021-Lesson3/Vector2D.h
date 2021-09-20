@@ -9,6 +9,11 @@ class Vector2D
 public:
 	// CONSTRUCTOR(S)
 	Vector2D();
+	Vector2D(float value);
+	Vector2D(float x, float y);
+
+	// COPY CONSTRUCTOR
+	Vector2D(const Vector2D& vec2D);
 
 	// DESTRUCTOR
 	~Vector2D();
@@ -29,8 +34,8 @@ public:
 
 private:
 	// ATTRIBUTES
-	float m_x;
-	float m_y;
+	float m_x{};
+	float m_y{};
 
 	// PRIVATE METHODS
 };
