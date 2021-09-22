@@ -15,12 +15,26 @@
 
 int main()
 {
-	Vector2D origin(10.0f, 10.0f);
+	try
+	{
+		float scalar = 1.5f;
 
-	Vector2D first(10.0f, 20.0f);
+		// Getting input from the console int our vector 2 object
+		Vector2D origin;
+		std::cin >> origin;
 
-	origin = origin - first;
+		// Output to the console from our vector 2 object
+		std::cout << origin;
 
-	std::cout << origin.ToString() << std::endl;;
+		Vector2D first(5.0f, 6.0f);
+
+		origin = scalar * origin * 0.5f;
+
+		std::cout << origin << std::endl;
+	}
+	catch (std::exception& exception)
+	{
+		std::cerr << exception.what() << " Ending Program" << std::endl;
+	}
 }
 

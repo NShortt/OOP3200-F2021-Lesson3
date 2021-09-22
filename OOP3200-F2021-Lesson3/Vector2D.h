@@ -21,7 +21,16 @@ public:
 	// OPERATOR OVERRIDES
 	Vector2D operator=(const Vector2D& rhs_vector);
 	Vector2D operator+(const Vector2D& rhs_vector) const;
-	Vector2D operator-(const Vector2D& rhs_vector);
+	Vector2D operator-(const Vector2D& rhs_vector) const;
+
+	Vector2D operator*(const Vector2D& rhs_vector) const;
+	Vector2D operator*(const float rhs_scalar) const;
+
+	// FRIEND OVERLOADS
+	friend Vector2D operator*(const float lhs_scalar, const Vector2D& rhs_vector);
+
+	friend std::ostream& operator<<(std::ostream& out, const Vector2D& rhs_vector);
+	friend std::istream& operator>>(std::istream& in, Vector2D& rhs_vector);
 
 	// ACCESSORS
 	float GetX() const;

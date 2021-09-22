@@ -1,5 +1,7 @@
 #include "Vector2D.h"
 
+#include <istream>
+
 Vector2D::Vector2D()
 {
 	Set(0.0f, 0.0f);
@@ -37,12 +39,50 @@ Vector2D Vector2D::operator+(const Vector2D& rhs_vector) const
 	return temp_vector;
 }
 
-Vector2D Vector2D::operator-(const Vector2D& rhs_vector)
+Vector2D Vector2D::operator-(const Vector2D& rhs_vector) const
 {
 	Vector2D temp_vector;
 	temp_vector.SetX((*this).GetX() - rhs_vector.GetX());
 	temp_vector.SetY((*this).GetY() - rhs_vector.GetY());
 	return temp_vector;
+}
+
+Vector2D Vector2D::operator*(const Vector2D& rhs_vector) const
+{
+	Vector2D temp_vector;
+	temp_vector.SetX((*this).GetX() * rhs_vector.GetX());
+	temp_vector.SetY((*this).GetY() * rhs_vector.GetY());
+	return temp_vector;
+}
+
+Vector2D Vector2D::operator*(const float rhs_scalar) const
+{
+	Vector2D temp_vector;
+	temp_vector.SetX((*this).GetX() * rhs_scalar);
+	temp_vector.SetY((*this).GetY() * rhs_scalar);
+	return temp_vector;
+}
+
+Vector2D operator*(const float lhsScalar, const Vector2D& rhsVector)
+{
+	Vector2D temp_vector;
+	temp_vector.SetX(lhsScalar * rhsVector.GetX());
+	temp_vector.SetY(lhsScalar * rhsVector.GetY());
+	return temp_vector;
+}
+
+std::ostream& operator<<(std::ostream& out, const Vector2D& rhs_vector)
+{
+	out << rhs_vector.ToString();
+	return out;
+}
+
+std::istream& operator>>(std::istream& in, Vector2D& rhs_vector)
+{
+	in >> rhs_vector.m_x;
+	in.ignore();
+	in >> rhs_vector.m_y;
+	return in;
 }
 
 float Vector2D::GetX() const
@@ -77,3 +117,5 @@ std::string Vector2D::ToString() const
 	outputString += "(" + std::to_string(GetX()) + ", " + std::to_string(GetY()) + ")";
 	return outputString;
 }
+
+
