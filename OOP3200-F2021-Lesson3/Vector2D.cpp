@@ -29,6 +29,22 @@ Vector2D Vector2D::operator=(const Vector2D& rhs_vector)
 	return *this;
 }
 
+Vector2D Vector2D::operator+(const Vector2D& rhs_vector) const
+{
+	Vector2D temp_vector;
+	temp_vector.SetX((*this).GetX() + rhs_vector.GetX());
+	temp_vector.SetY((*this).GetY() + rhs_vector.GetY());
+	return temp_vector;
+}
+
+Vector2D Vector2D::operator-(const Vector2D& rhs_vector)
+{
+	Vector2D temp_vector;
+	temp_vector.SetX((*this).GetX() - rhs_vector.GetX());
+	temp_vector.SetY((*this).GetY() - rhs_vector.GetY());
+	return temp_vector;
+}
+
 float Vector2D::GetX() const
 {
 	return m_x;

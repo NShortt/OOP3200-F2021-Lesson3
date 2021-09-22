@@ -20,6 +20,8 @@ public:
 
 	// OPERATOR OVERRIDES
 	Vector2D operator=(const Vector2D& rhs_vector);
+	Vector2D operator+(const Vector2D& rhs_vector) const;
+	Vector2D operator-(const Vector2D& rhs_vector);
 
 	// ACCESSORS
 	float GetX() const;

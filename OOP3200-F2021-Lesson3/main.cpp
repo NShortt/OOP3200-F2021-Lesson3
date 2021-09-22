@@ -15,11 +15,11 @@
 
 int main()
 {
-	Vector2D origin;
+	Vector2D origin(10.0f, 10.0f);
 
 	Vector2D first(10.0f, 20.0f);
 
-	origin = first;
+	origin = origin - first;
 
 	std::cout << origin.ToString() << std::endl;;
 }
