@@ -18,6 +18,9 @@ public:
 	// DESTRUCTOR
 	~Vector2D();
 
+	// OPERATOR OVERRIDES
+	Vector2D operator=(const Vector2D& rhs_vector);
+
 	// ACCESSORS
 	float GetX() const;
 	float GetY() const;

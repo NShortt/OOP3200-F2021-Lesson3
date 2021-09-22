@@ -23,6 +23,12 @@ Vector2D::Vector2D(const Vector2D& vec2D)
 Vector2D::~Vector2D()
 = default;
 
+Vector2D Vector2D::operator=(const Vector2D& rhs_vector)
+{
+	Set(rhs_vector.GetX(), rhs_vector.GetY());
+	return *this;
+}
+
 float Vector2D::GetX() const
 {
 	return m_x;
