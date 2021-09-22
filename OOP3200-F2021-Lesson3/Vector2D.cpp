@@ -1,6 +1,7 @@
 #include "Vector2D.h"
 
-#include <istream>
+#include <sstream>
+#include <cmath>
 
 Vector2D::Vector2D()
 {
@@ -116,6 +117,17 @@ std::string Vector2D::ToString() const
 	std::string outputString;
 	outputString += "(" + std::to_string(GetX()) + ", " + std::to_string(GetY()) + ")";
 	return outputString;
+}
+
+float Vector2D::Distance(const Vector2D& lhs, const Vector2D& rhs)
+{
+	// difference between x values
+	const float delta_x = rhs.GetX() - lhs.GetX();
+	// difference between y values
+	const float delta_y = rhs.GetY() - lhs.GetY();
+
+	// return the result of the pythagorean formula
+	return sqrt((delta_x * delta_x) + (delta_y * delta_y));
 }
 
 

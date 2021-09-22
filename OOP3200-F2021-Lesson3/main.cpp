@@ -20,17 +20,18 @@ int main()
 		float scalar = 1.5f;
 
 		// Getting input from the console int our vector 2 object
+		std::cout << "Please enter the Origin Vector 2:" << std::endl;
 		Vector2D origin;
 		std::cin >> origin;
 
+		std::cout << "Please enter the First Vector 2:" << std::endl;
+		Vector2D first;
+		std::cin >> first;
+
+		const float distance = Vector2D::Distance(origin, first);
+
 		// Output to the console from our vector 2 object
-		std::cout << origin;
-
-		Vector2D first(5.0f, 6.0f);
-
-		origin = scalar * origin * 0.5f;
-
-		std::cout << origin << std::endl;
+		std::cout << "\nThe distance between: " << origin << " and " << first << " is " << distance << std::endl;
 	}
 	catch (std::exception& exception)
 	{
